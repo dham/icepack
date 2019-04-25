@@ -11,4 +11,4 @@ jobs:
         command: pip3 install --editable .
       - run:
         name: run tests
-        command: MPLBACKEND='Agg' pytest --capture=no --verbose
+        command: pytest --capture=no --verbose
