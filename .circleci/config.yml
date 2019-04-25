@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: icepack/firedrake:buster
+    working_directory: ~/icepack
+    steps:
+      - checkout
+      - run:
+        name: install
+        command: pip3 install --editable .
+      - run:
+        name: run tests
+        command: MPLBACKEND='Agg' pytest --capture=no --verbose
