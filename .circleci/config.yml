@@ -6,9 +6,5 @@ jobs:
     working_directory: ~/icepack
     steps:
       - checkout
-      - run:
-        name: install
-        command: pip3 install --editable .
-      - run:
-        name: run tests
-        command: pytest --capture=no --verbose
+      - run: pip3 install --editable .
+      - run: pytest --capture=no --verbose
